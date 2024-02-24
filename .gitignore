@@ -1,0 +1,29 @@
+# Node modules
+/node_modules/
+
+# Environment variables
+.env
+
+# Build output
+/dist
+/build
+
+# Logs
+*.log
+
+# Editor directories and files
+.idea
+*.swp
+*.swo
+.vscode/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Dependency directories (if not using Node)
+/bower_components/
+/jspm_packages/
+
+# Optional: Ignore the frontend/node_modules if separate
+/frontend/node_modules/
