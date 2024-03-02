@@ -27,3 +27,4 @@ Thumbs.db
 
 # Optional: Ignore the frontend/node_modules if separate
 /frontend/node_modules/
+/backend/node_modules/
