@@ -11,4 +11,21 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+exports.listProducts = async (req, res) => {
+  const { collectionName } = req.params; // e.g., 'book-collection'
+  const CollectionModel = mongoose.model(
+    collectionName,
+    ProductSchema,
+    collectionName
+  );
+
+  try {
+    const products = await CollectionModel.find({});
+    res.json(products);
+  } catch (error) {
+    console.error("Error fetching products from", collectionName, ":", error);
+    res.status(500).send("Server Error");
+  }
+};
+
 module.exports = mongoose.model("Product", productSchema);
