@@ -1,26 +1,34 @@
-const { MongoClient } = require("mongodb");
+const mongoose = require("mongoose");
+require("dotenv").config();
 
 // Connection URL and Database Name
-const url =
-  "mongodb+srv://talentedmrfox:808fcfjIgqqoVw3B@mernbookstore.ntwza2s.mongodb.net/MernBookstore?retryWrites=true&w=majority";
+const url = process.env.MONGO_URI; // Use the MONGO_URI from environment variables
 const dbName = "MernBookstore"; // Database name
 
 async function main() {
-  const client = new MongoClient(url);
-
   try {
-    // Use connect method to connect to the server
-    await client.connect();
-    console.log("Connected successfully to server");
+    // Connect to the MongoDB database
+    await mongoose.connect(url, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Connected successfully to MongoDB");
 
-    const db = client.db(dbName);
+    const db = mongoose.connection;
     // Specify the collection you want to interact with
     const collectionName = "books"; // Adjust based on the category you want to add to, e.g., "movies" for movie-collection
     const collection = db.collection(collectionName);
 
     // The books dataset
-
     const books = [
+      {
+        title: "The Count of Monte Cristo",
+        author: "Alexandre Dumas",
+        publicationYear: 1844,
+        genre: "Fiction",
+        price: 19.99,
+        stock: 20,
+      },
       {
         title: "To Kill a Mockingbird",
         author: "Harper Lee",
@@ -119,17 +127,13 @@ async function main() {
       console.log(`Inserted document "${book.title}".`);
     }
 
-    // Deleting all documents in the 'books' collection
-    const deleteResult = await collection.deleteMany({});
-    console.log("Deleted documents:", deleteResult.deletedCount);
-
-    // Inserting the dataset into the 'albums' collection
+    // Inserting the dataset into the 'books' collection
     const insertResult = await collection.insertMany(books);
     console.log("Inserted documents:", insertResult.insertedCount);
   } catch (err) {
     console.error("An error occurred:", err);
   } finally {
-    await client.close();
+    mongoose.disconnect(); // Close the database connection
   }
 }
 
