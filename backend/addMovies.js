@@ -18,7 +18,6 @@ async function main() {
     // Specify the collection you want to interact with
     const collectionName = "movies"; // Adjust based on the category you want to add to, e.g., "movies" for movie-collection
     const collection = db.collection(collectionName);
-    // Sample dataset with added 'price' and 'stock'
     const movies = [
       {
         title: "The Shawshank Redemption",
@@ -27,6 +26,7 @@ async function main() {
         genre: "Drama",
         price: 24.99,
         stock: 50,
+        category: "the-shawshank-redemption", // Unique category for each movie
       },
       {
         title: "The Godfather",
@@ -35,6 +35,7 @@ async function main() {
         genre: "Crime, Drama",
         price: 19.99,
         stock: 100,
+        category: "the-godfather", // Unique category for each movie
       },
       {
         title: "The Dark Knight",
@@ -43,6 +44,7 @@ async function main() {
         genre: "Action, Crime, Drama",
         price: 29.99,
         stock: 75,
+        category: "the-dark-knight", // Unique category for each movie
       },
       {
         title: "Forrest Gump",
@@ -51,6 +53,7 @@ async function main() {
         genre: "Drama, Romance",
         price: 14.99,
         stock: 80,
+        category: "forrest-gump", // Unique category for each movie
       },
       {
         title: "Inception",
@@ -59,6 +62,7 @@ async function main() {
         genre: "Action, Adventure, Sci-Fi",
         price: 21.99,
         stock: 100,
+        category: "inception", // Unique category for each movie
       },
       {
         title: "The Matrix",
@@ -67,6 +71,7 @@ async function main() {
         genre: "Action, Sci-Fi",
         price: 18.99,
         stock: 120,
+        category: "the-matrix", // Unique category for each movie
       },
       {
         title: "Pulp Fiction",
@@ -75,6 +80,7 @@ async function main() {
         genre: "Crime, Drama",
         price: 22.99,
         stock: 90,
+        category: "pulp-fiction", // Unique category for each movie
       },
       {
         title: "The Lord of the Rings: The Return of the King",
@@ -83,6 +89,7 @@ async function main() {
         genre: "Action, Adventure, Drama",
         price: 27.99,
         stock: 60,
+        category: "the-lord-of-the-rings-the-return-of-the-king", // Unique category for each movie
       },
       {
         title: "The Silence of the Lambs",
@@ -91,6 +98,7 @@ async function main() {
         genre: "Crime, Drama, Thriller",
         price: 16.99,
         stock: 70,
+        category: "the-silence-of-the-lambs", // Unique category for each movie
       },
       {
         title: "Fight Club",
@@ -99,6 +107,7 @@ async function main() {
         genre: "Drama",
         price: 15.99,
         stock: 85,
+        category: "fight-club", // Unique category for each movie
       },
     ];
 

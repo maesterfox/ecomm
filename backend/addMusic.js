@@ -16,10 +16,9 @@ async function main() {
 
     const db = mongoose.connection;
     // Specify the collection you want to interact with
-    const collectionName = "music"; // Adjust based on the category you want to add to, e.g., "movies" for movie-collection
+    const collectionName = "musics"; // Adjust based on the category you want to add to, e.g., "movies" for movie-collection
     const collection = db.collection(collectionName);
 
-    // Sample dataset with added 'price' and 'stock'
     const albums = [
       {
         artist: "The Beatles",
@@ -28,6 +27,7 @@ async function main() {
         genre: "Rock",
         price: 19.99,
         stock: 100,
+        category: "the-beatles-abbey-road", // Unique category for each album
       },
       {
         artist: "Beyoncé",
@@ -36,6 +36,7 @@ async function main() {
         genre: "Pop, R&B",
         price: 14.99,
         stock: 150,
+        category: "beyonce-lemonade", // Unique category for each album
       },
       {
         artist: "Bob Dylan",
@@ -44,6 +45,7 @@ async function main() {
         genre: "Folk Rock",
         price: 12.99,
         stock: 75,
+        category: "bob-dylan-highway-61-revisited", // Unique category for each album
       },
       {
         artist: "Kendrick Lamar",
@@ -52,6 +54,7 @@ async function main() {
         genre: "Hip Hop",
         price: 15.99,
         stock: 200,
+        category: "kendrick-lamar-to-pimp-a-butterfly", // Unique category for each album
       },
       {
         artist: "Fleetwood Mac",
@@ -60,6 +63,7 @@ async function main() {
         genre: "Rock",
         price: 18.99,
         stock: 120,
+        category: "fleetwood-mac-rumours", // Unique category for each album
       },
       {
         artist: "Nirvana",
@@ -68,6 +72,7 @@ async function main() {
         genre: "Grunge, Alternative Rock",
         price: 21.99,
         stock: 90,
+        category: "nirvana-nevermind", // Unique category for each album
       },
       {
         artist: "Adele",
@@ -76,6 +81,7 @@ async function main() {
         genre: "Pop, Soul",
         price: 13.99,
         stock: 140,
+        category: "adele-21", // Unique category for each album
       },
       {
         artist: "Miles Davis",
@@ -84,6 +90,7 @@ async function main() {
         genre: "Jazz",
         price: 17.99,
         stock: 80,
+        category: "miles-davis-kind-of-blue", // Unique category for each album
       },
       {
         artist: "Taylor Swift",
@@ -92,6 +99,7 @@ async function main() {
         genre: "Pop",
         price: 19.99,
         stock: 110,
+        category: "taylor-swift-1989", // Unique category for each album
       },
       {
         artist: "Pink Floyd",
@@ -100,6 +108,7 @@ async function main() {
         genre: "Progressive Rock",
         price: 22.99,
         stock: 100,
+        category: "pink-floyd-the-dark-side-of-the-moon", // Unique category for each album
       },
     ];
 

@@ -19,7 +19,6 @@ async function main() {
     const collectionName = "books"; // Adjust based on the category you want to add to, e.g., "movies" for movie-collection
     const collection = db.collection(collectionName);
 
-    // The books dataset
     const books = [
       {
         title: "The Count of Monte Cristo",
@@ -28,6 +27,7 @@ async function main() {
         genre: "Fiction",
         price: 19.99,
         stock: 20,
+        category: "the-count-of-monte-cristo", // Unique category for each book
       },
       {
         title: "To Kill a Mockingbird",
@@ -36,6 +36,7 @@ async function main() {
         genre: "Fiction",
         price: 12.99,
         stock: 50,
+        category: "to-kill-a-mockingbird", // Unique category for each book
       },
       {
         title: "1984",
@@ -44,6 +45,7 @@ async function main() {
         genre: "Dystopian Fiction",
         price: 10.99,
         stock: 100,
+        category: "1984", // Unique category for each book
       },
       {
         title: "The Great Gatsby",
@@ -52,6 +54,7 @@ async function main() {
         genre: "Fiction",
         price: 14.99,
         stock: 75,
+        category: "the-great-gatsby", // Unique category for each book
       },
       {
         title: "Pride and Prejudice",
@@ -60,6 +63,7 @@ async function main() {
         genre: "Romantic Fiction",
         price: 9.99,
         stock: 80,
+        category: "pride-and-prejudice", // Unique category for each book
       },
       {
         title: "The Catcher in the Rye",
@@ -68,14 +72,7 @@ async function main() {
         genre: "Fiction",
         price: 11.99,
         stock: 100,
-      },
-      {
-        title: "To Kill a Mockingbird",
-        author: "Harper Lee",
-        publicationYear: 1960,
-        genre: "Fiction",
-        price: 12.99,
-        stock: 50,
+        category: "the-catcher-in-the-rye", // Unique category for each book
       },
       {
         title: "Harry Potter and the Philosopher's Stone",
@@ -84,6 +81,7 @@ async function main() {
         genre: "Fantasy",
         price: 16.99,
         stock: 120,
+        category: "harry-potter-and-the-philosophers-stone", // Unique category for each book
       },
       {
         title: "The Hobbit",
@@ -92,6 +90,7 @@ async function main() {
         genre: "Fantasy",
         price: 13.99,
         stock: 90,
+        category: "the-hobbit", // Unique category for each book
       },
       {
         title: "Jane Eyre",
@@ -100,6 +99,7 @@ async function main() {
         genre: "Gothic Fiction",
         price: 11.99,
         stock: 60,
+        category: "jane-eyre", // Unique category for each book
       },
       {
         title: "Moby-Dick",
@@ -108,6 +108,7 @@ async function main() {
         genre: "Adventure Fiction",
         price: 14.99,
         stock: 70,
+        category: "moby-dick", // Unique category for each book
       },
     ];
 

@@ -45,15 +45,33 @@ function CategorySelector() {
     loadProducts();
   }, [selectedCategory]);
 
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
+  };
+
   return (
     <div>
-      <h2>Select a Category</h2>
-      {categories.map((category) => (
-        <button key={category} onClick={() => setSelectedCategory(category)}>
-          {category}
-        </button>
-      ))}
-      <div className="products-list">
+      <h2 style={{ marginBottom: "20px" }}>Select a Category</h2>
+      <select
+        value={selectedCategory}
+        onChange={handleCategoryChange}
+        style={{ marginBottom: "30px" }}
+      >
+        <option value="">Select a category</option>
+        {categories.map((category) => (
+          <option key={category} value={category}>
+            {category}
+          </option>
+        ))}
+      </select>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: "20px",
+        }}
+      >
         {isLoading ? (
           <div>Loading products...</div>
         ) : (

@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { FaGithub, FaLinkedin } from "react-icons/fa"; // Importing social icons from 'react-icons'
+import { FaGithub, FaLinkedin, FaSmile } from "react-icons/fa"; // Importing social icons from 'react-icons'
 
 function Footer() {
   return (
-    <footer className="mt-auto py-3 bg-dark text-white">
+    <footer className="mt-auto py-3 text-white">
       <Container>
         <Row>
           <Col className="text-center">
@@ -34,7 +34,7 @@ function Footer() {
                 rel="noopener noreferrer"
                 className="text-white mx-2"
               >
-                Portfolio
+                <FaSmile size={30} />
               </a>
             </div>
           </Col>

@@ -1,33 +1,47 @@
-const Product = require("../models/Product");
+// productController.js
+// Controller for the product routes
 
-// In productController.js
-exports.listCategories = async (req, res) => {
-  try {
-    // Assuming a fixed set of categories. For a dynamic approach, you could fetch distinct categories from your product documents.
-    const categories = ["books", "electronics", "movies", "music"];
-    res.json(categories);
-    console.log("Sending categories:", categories); // Log what's being sent
-  } catch (error) {
-    console.error("Error fetching categories:", error);
-    res.status(500).send("Server Error");
+const { Book, Movie, Music, Electronics } = require("../models/ProductSchemas");
+
+// Function to dynamically select the model based on the category name
+function getModelByCategory(categoryName) {
+  switch (categoryName) {
+    case "books":
+      return Book;
+    case "movies":
+      return Movie;
+    case "music":
+      return Music;
+    case "electronics":
+      return Electronics;
+    default:
+      throw new Error("Invalid category");
   }
-};
+}
 
-// List all products
+// List all products in a specific category
 exports.listProducts = async (req, res) => {
+  const { categoryName } = req.params;
+  const Model = getModelByCategory(categoryName);
+
   try {
-    const products = await Product.find({});
+    const products = await Model.find({});
     res.json(products);
   } catch (error) {
-    console.error(error);
+    console.error(
+      `Error fetching products for category ${categoryName}:`,
+      error
+    );
     res.status(500).send("Server Error");
   }
 };
-
-// Create a new product
+// Create a new product in a specific category
 exports.createProduct = async (req, res) => {
+  const { categoryName } = req.params;
+  const Model = getModelByCategory(categoryName);
+
   try {
-    const newProduct = new Product(req.body);
+    const newProduct = new Model(req.body);
     const savedProduct = await newProduct.save();
     res.status(201).json(savedProduct);
   } catch (error) {
@@ -36,14 +50,15 @@ exports.createProduct = async (req, res) => {
   }
 };
 
-// Update an existing product
+// Update an existing product in a specific category
 exports.updateProduct = async (req, res) => {
+  const { categoryName, id } = req.params;
+  const Model = getModelByCategory(categoryName);
+
   try {
-    const updatedProduct = await Product.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    );
+    const updatedProduct = await Model.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
     if (!updatedProduct) {
       return res.status(404).send("Product not found");
     }
@@ -54,10 +69,13 @@ exports.updateProduct = async (req, res) => {
   }
 };
 
-// Delete a product
+// Delete a product in a specific category
 exports.deleteProduct = async (req, res) => {
+  const { categoryName, id } = req.params;
+  const Model = getModelByCategory(categoryName);
+
   try {
-    const deletedProduct = await Product.findByIdAndDelete(req.params.id);
+    const deletedProduct = await Model.findByIdAndDelete(id);
     if (!deletedProduct) {
       return res.status(404).send("Product not found");
     }

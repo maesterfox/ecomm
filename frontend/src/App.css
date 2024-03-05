@@ -1,7 +1,7 @@
 /* Content container styles */
 .content-container {
   max-width: 1200px; /* Adjust max-width as needed */
-  margin: 0 auto; /* Center content horizontally */
+  margin: 5rem auto; /* Center content horizontally */
   padding: 20px; /* Add padding around the content */
 }
 
@@ -14,27 +14,133 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: var(--text-color);
+  background: linear-gradient(to right, #1a2f3d, #160649);
+  color: whitesmoke;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5; 
+  color: whitesmoke;
+  text-shadow: 0px 2px 1px rgba(0,0,0,0.1);
   margin: 0;
   padding: 0;
 }
 
+/* Dropdown container styles */
+.dropdown-container {
+  display: block;
+  align-items: center;
+  margin-bottom: 30px;
+  transition: all 0.3s ease-in-out;
+ }
+ 
+ /* Dropdown styles */
+ .dropdown-select {
+  width: 250px; /* Adjust width as needed */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+ }
+ 
+ /* Products container styles */
+ .products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+ }
+ 
+
+ .product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 200px;
+  background: linear-gradient(to right, #1a2f3d, #160649);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  text-align: center; /* Center text elements */
+  transition: all 0.3s ease-in-out;
+
+ }
+
+ @media screen and (max-width: 600px) {
+
+  .products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+   }
+
+ .product-card {
+  flex-direction: column; /* Make the card appear as a column */
+  width: 130px;
+  margin: 5px;
+  padding: 10px;
+  }
+  
+ }
+
+ .product-card:hover {
+  transform: scale(1.05); /* Scale the card on hover */
+ }
+ 
+ .product-card img {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the area without stretching */
+  margin-bottom: 10px; /* Add space below the image */
+ }
+ 
+ .product-card h3, .product-card p {
+  margin: 5px 0; /* Add vertical margin to titles and descriptions */
+ }
+ 
+ .product-card button {
+  margin-top: auto; /* Push the button to the bottom */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+ }
+ 
+ .product-card button:hover {
+  background-color: #0056b3;
+ }
+ 
+
 /* Header styles */
 header {
-  background-color: var(--primary-color);
   padding: 20px;
   text-align: center;
   color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
 }
 
 /* Navigation styles */
 nav {
-  background-color: var(--secondary-color);
+  background: linear-gradient(to right, #021522, #300f9ca9);
   padding: 10px;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  opacity: 0.9;
 }
 
 nav a {
@@ -45,31 +151,42 @@ nav a {
 
 /* Footer styles */
 footer {
-  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
-  text-align: center;
   color: white;
   position: fixed;
   bottom: 0;
   width: 100%;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Centers the footer itself horizontally */
+
+  opacity: 0.8;
 }
 
+/* Add this to your CSS file */
 .social-links {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  justify-content: center; /* Centers the social links horizontally */
+  align-items: center; /* Centers the social links vertically */
+  gap: 20px; /* Adds some space between the social links */
+ }
 
 .social-links a {
-  color: white;
+  color: rgba(255, 255, 255, 0.479) !important;
   text-decoration: none;
   margin: 0 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  transform: scale(1.1) !important;
 }
 
 /* Button styles */
 button {
-  background-color: var(--secondary-color);
   color: white;
   padding: 10px 20px;
   border: none;
@@ -79,7 +196,7 @@ button {
 }
 
 button:hover {
-  background-color: #27ae60;
+  background-color: #221630;
 }
 
 /* Input styles */

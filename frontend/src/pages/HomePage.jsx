@@ -2,28 +2,59 @@ import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
-    <div>
-      <h1>Welcome to Our E-commerce Store</h1>
-      <p>Discover our amazing products.</p>
+    <div className="home-page">
+      <h1>Welcome to my E-commerce Storefront</h1>
       <p>
-        Welcome to our e-commerce platform, where you can explore a wide range
-        of high-quality products curated just for you. Whether you're looking
-        for the latest fashion trends, cutting-edge gadgets, or everyday
-        essentials, we've got you covered.
+        An innovative e-commerce platform designed to offer a seamless shopping
+        experience.
       </p>
+      <h2>About the Project</h2>
       <p>
-        Our e-commerce store is built using modern technologies such as React,
-        Redux, and Node.js, with a MongoDB database backend. We've designed the
-        site to provide you with a seamless shopping experience, featuring a
-        user-friendly interface and robust functionality.
+        E-commerce Storefront is a comprehensive e-commerce platform that
+        provides a wide range of products, user management, shopping cart,
+        checkout, and admin dashboard functionalities. It's built with modern
+        technologies to ensure a smooth and efficient shopping experience.
       </p>
+      <h2>Technologies Used</h2>
+      <ul>
+        <li>Frontend: Vite, React</li>
+        <li>Backend: Node.js</li>
+        <li>Database: MongoDB</li>
+      </ul>
+      <h2>Key Features</h2>
+      <ul>
+        <li>Product catalog with categories and filters</li>
+        <li>User registration, login, and profile management</li>
+        <li>Shopping cart and checkout process</li>
+        <li>Order management</li>
+        <li>
+          Admin dashboard for product and order management, analytics viewing
+        </li>
+      </ul>
+      <h2>Directory Structure</h2>
       <p>
-        Browse through our extensive product catalog, featuring categories
-        ranging from electronics and fashion to home goods and more. Add items
-        to your shopping cart with ease and enjoy a hassle-free checkout
-        process.
+        The project is structured to ensure maintainability, scalability, and
+        efficiency, with a clear separation of concerns between the frontend and
+        backend.
       </p>
-      <Link to="/products">Start Shopping</Link>
+      <h2>Setup Instructions</h2>
+      <p>
+        To get started, initialize both frontend and backend using npm, install
+        dependencies, configure environment variables, and run backend and
+        frontend servers using npm scripts.
+      </p>
+      <h2>Authors</h2>
+      <p>David Fox - Full Stack Developer</p>
+      <p>
+        <a href="mailto:david.fox@davidfoxdev.co.uk">Email</a> |{" "}
+        <a href="https://www.linkedin.com/in/davidfoxtechcode/">LinkedIn</a> |{" "}
+        <a href="https://super.davidfoxdev.co.uk">Portfolio</a>
+      </p>
+      <h2>License</h2>
+      <p>Project is licensed under the MIT License.</p>
+      <Link to="/products" className="start-shopping-link">
+        <h2>Start Shopping</h2>
+      </Link>
       <p>New to our store? Get started by creating an account:</p>
       <Link to="/login">Login</Link> | <Link to="/register">Register</Link>
     </div>
