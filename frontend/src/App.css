@@ -137,10 +137,22 @@ nav {
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed !important;
+  font-size: 1.4rem;
   top: 0;
   width: 100%;
   z-index: 1;
   opacity: 0.9;
+}
+
+nav .Brand {
+  font-size: 2.8rem;
+
+}
+
+navbar-brand {
+  font-size: 3.8rem;
+  text-shadow: 0px 2px 1px rgba(0,0,0,0.1);
+  color: whitesmoke;;
 }
 
 nav a {
@@ -187,16 +199,19 @@ footer {
 
 /* Button styles */
 button {
-  color: white;
+  color: rgb(9, 2, 58);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: 0.3s ease-in-out;
+  margin-top: 1rem;
+  font-size: 1.2rem;
 }
 
 button:hover {
   background-color: #221630;
+  color: white;
 }
 
 /* Input styles */
@@ -207,6 +222,7 @@ input {
   border-radius: 5px;
   width: 100%;
   box-sizing: border-box;
+  font-size: 1.2rem;
 }
 
 /* Form styles */

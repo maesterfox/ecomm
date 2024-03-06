@@ -17,8 +17,8 @@ function HomePage() {
       </p>
       <h2>Technologies Used</h2>
       <ul>
-        <li>Frontend: Vite, React</li>
-        <li>Backend: Node.js</li>
+        <li>Frontend: Vite, React, Bootstrap, CSS</li>
+        <li>Backend: Node.js, Express.js</li>
         <li>Database: MongoDB</li>
       </ul>
       <h2>Key Features</h2>
